@@ -25,7 +25,7 @@ window.onload = function () {
    
     $("#formprueba1").addClass("hide");
     
-    
+     DibujarScoreBoard() ;
     
     //obtener valores
 function getInputVal(id) {
@@ -207,8 +207,8 @@ return firebase.database().ref('/secretosdeltiempo/').once('value').then(functio
      var $tbody = $tableScore.append('<tbody />').children('tbody');
 
 var lugar = 0;
-//se filtran los 10 mejores solamente
-w.slice(0,10).forEach(row=>{
+//se filtran los 50 mejores solamente
+w.slice(0,50).forEach(row=>{
         lugar += 1;
         console.log(row.username)
     // add row
@@ -216,7 +216,7 @@ $tbody.append('<tr />').children('tr:last')
 .append("<td>"+ lugar + "</td>")
 .append("<td>"+row.username + "</td>")
 .append("<td>"+ row.score+ "</td>")
-.append("<td>"+  row.date + "</td>");
+.append("<td>"+ new Date(row.date).toLocaleDateString() + ' ' + new Date(row.date).toLocaleTimeString()+ "</td>");
     
     });
 
