@@ -28,6 +28,7 @@ window.onload = function () {
     $("#formprueba1").addClass("hide");
     
      DibujarScoreBoard() ;
+     DibujarComentariosRecursos();
     
     //obtener valores
 function getInputVal(id) {
@@ -294,6 +295,12 @@ $tableScore.appendTo('#dynamicScoreTable');
 
         var code = Math.floor(Math.random() * 99999999);
         var alias = getInputVal('alias');
+if(alias=="")
+{
+  alert("su alias no puede ser vacio");
+  return;
+}
+
        //var alias = 'anonimo';
      // var email = getInputVal('email');
      var email = 'anonimo@anonimo.cl';
@@ -666,4 +673,62 @@ function  detenteEtapa2()
    
   }
 
-  
+  function DibujarComentariosRecursos() {
+
+
+    //Get the user snapshotdibujarBoard
+    return firebase.database().ref('/feedback/').once('value').then(function(snapshotComentarios) {
+        //Do something with your user data located in snapshot
+       var fotito1 = snapshotComentarios.val();
+        console.log(snapshotComentarios.val());
+        var   x = Object.keys(fotito1).map(key=>{const a = fotito1[key]; a["id"]= key; return a  });
+       // var w = x.sort((a,b) => {return b.score - a.score });
+    
+        console.log(x);
+        console.log(x.slice(0,10));
+    
+        var $tableComment = $('<table>');
+    
+        $tableComment.append('<caption>Comentarios Jugadores</caption>')
+        .append('<thead>').children('thead')
+        .append('<tr />').children('tr').append('<th>Fecha </th><th>Codigo</th><th>email</th><th>coment</th>');
+    
+        //tbody
+         var $tbody = $tableComment.append('<tbody />').children('tbody');
+    
+    var lugar = 0;
+    //se filtran los 50 mejores solamente
+   x.slice(0,50).forEach(row=>{
+          
+            console.log(row.username)
+
+            Object.keys(row).forEach(r => {
+
+              if (r === 'id') return;
+              const fila = row[r];
+              /// ACA TU CODIGO, todas las referencias a row, cambiala a fila
+           
+                   // add row
+        $tbody.append('<tr />').children('tr:last')
+        .append("<td>"+ new Date(fila.date).toLocaleDateString() + ' ' + new Date(fila.date).toLocaleTimeString()+ + "</td>")
+        .append("<td>"+fila.usercode + "</td>")
+        .append("<td>"+ fila.email+ "</td>")
+        .append("<td>"+ fila.coment+ "</td>");
+            });
+
+
+
+   
+        
+        });
+   
+    
+    
+    // add table to dom
+    $tableComment.appendTo('#formlistaComentarios');
+    
+    
+      //  w.forEach(row=>{console.log(row)});
+        //    w.forEach(row=>{console.log(row.username)})
+    });
+    }

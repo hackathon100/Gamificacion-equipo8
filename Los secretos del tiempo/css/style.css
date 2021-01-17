@@ -509,6 +509,14 @@ i {
     background-size: cover;
     height: 100vh;
 }
+.recursos{
+  background-image: url(../img/fondo_gamer.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  -moz-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+}
 .historiabkg{
     color:#fff;
     padding-top: 15%;
@@ -573,3 +581,10 @@ i {
     width: 100%;
 
 } 
+
+.comentarios
+{
+  color:rgb(33, 33, 194);
+  font-size: 13px;
+
+}
