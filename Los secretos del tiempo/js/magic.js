@@ -6,7 +6,9 @@ window.onload = function () {
     
     //area imagen cuadrado
     $("#AreaCuadrado").click(pasarEtapa2);
-
+    $("#AreaCirculo").click(detenteEtapa2);
+    $("#AreaRectangulo").click(detenteEtapa2);
+    $("#AreaTriangulo").click(detenteEtapa2);
     //botonera mision3
     $("#btn3_0").click(botonera_push_btn3_0);
     $("#btn3_1").click(botonera_push_btn3_1);
@@ -151,10 +153,21 @@ updates['/secretosdeltiempo/' + code+ '/score/'] = score;
     console.log('Retroalimentación');
     var code = $("#code").text();
      var comentario = getInputVal('txtComentario');
+     if(comentario =="")
+     {
+       alert("Ingresa un comentario para continuar");
+
+       return;
+     }
      var email = getInputVal('txtEmail');
+     if(email =="")
+     {
+       alert("Ingresa un comentario para continuar");
 
-
-     
+       return;
+     }
+     var score = $("#score").text();
+     score = Number.parseInt(score) + 150;
     firebase.database().ref('feedback/' + code+ '/'+Date.now()).set({
         usercode: code,
         coment : comentario,
@@ -170,7 +183,10 @@ updates['/secretosdeltiempo/' + code+ '/score/'] = score;
 
           var updates = {};
           updates['/secretosdeltiempo/' + code+ '/email/'] = email;
-               
+          updates['/secretosdeltiempo/' + code+ '/score/'] = score;
+
+
+          $("#score").text(score);  
           $("#email").text(email);
           $("#formFeedback").addClass("hide");
 alert("Felicitaciones Terminaste el Juego te invitamos a ver la tabla de puntajes");
@@ -182,6 +198,38 @@ alert("Felicitaciones Terminaste el Juego te invitamos a ver la tabla de puntaje
 
 
    }
+
+
+
+
+
+
+/*
+   firebase.database().ref('secretosdeltiempo/' + code+ '/score/').set(  {
+      score
+     }, (error) => {
+       if (error) {
+         // The write failed...
+         alert('fallo por '+error.value);
+       } else {
+         // Data saved successfully!
+         console.log('perdio 10 puntos')
+
+
+        
+
+       }
+     });
+*/
+
+
+
+
+
+
+
+
+
 
    function DibujarScoreBoard() {
 
@@ -349,7 +397,22 @@ return firebase.database().ref('/secretosdeltiempo/').once('value').then(functio
 
   console.log('esto esta fuera de la funcion de firebase');
   
+function  detenteEtapa2()
+{
+  alert('¡Lo sentimos! Presionaste un comando equivocado.');
+  var code = $("#code").text();
+  var score = $("#score").text();
+  score = Number.parseInt(score) - 50;
 
+  
+  $("#score").text(score);
+  var updates = {};
+  updates['/secretosdeltiempo/' + code+ '/score/'] = score;
+
+  return firebase.database().ref().update(updates);
+
+
+}
   function pasarEtapa2()
   {
     
@@ -558,18 +621,16 @@ return firebase.database().ref('/secretosdeltiempo/').once('value').then(functio
         
       var resp_prueba3 = snapshotEstaticos2.child("resp_prueba3").val();
 
+      var code = $("#code").text();
+      var score = $("#score").text();
+
       if(txt3_respuesta == resp_prueba3)
       {
 
-      var code = $("#code").text();
-      var score = $("#score").text();
+    
       score = Number.parseInt(score) + 100;
   
-      
-      $("#score").text(score);
-      var updates = {};
-      updates['/secretosdeltiempo/' + code+ '/score/'] = score;
-  
+ 
       alert('¡Muy bien! Prem pudo encender el motor de la nave.');
 
       $("#section4Juego").addClass("hide");
@@ -579,9 +640,19 @@ return firebase.database().ref('/secretosdeltiempo/').once('value').then(functio
    
       }else
       {
+        score = Number.parseInt(score) - 30;
+
         alert('¡Respuesta Equivocada! Prem necesita tu ayuda, Intentalo Denuevo.');
 
       }
+
+      $("#score").text(score);
+      var updates = {};
+      updates['/secretosdeltiempo/' + code+ '/score/'] = score;
+  
+
+
+      return firebase.database().ref().update(updates);
 
     
 

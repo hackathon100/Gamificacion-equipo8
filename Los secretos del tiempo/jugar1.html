@@ -288,9 +288,9 @@
       
         <map name="Map" id="Map">
           <area id="AreaCuadrado" target="" alt="" title="" href="#"  coords="737,53,626,168" shape="rect" />
-          <area target="" alt="" title="" href="#" coords="29,79,34,143,166,145,168,78" shape="poly" />
-          <area target="" alt="" title="" href="#" coords="442,538,79" shape="circle" />
-          <area target="" alt="" title="" href="#" coords="684,292,740,369,791,294" shape="poly"/>
+          <area id="AreaRectangulo" target="" alt="" title="" href="#" coords="29,79,34,143,166,145,168,78" shape="poly" />
+          <area id="AreaCirculo" target="" alt="" title="" href="#" coords="442,538,79" shape="circle" />
+          <area id="AreaTriangulo" target="" alt="" title="" href="#" coords="684,292,740,369,791,294" shape="poly"/>
         </map>
         
       </div>
@@ -328,7 +328,7 @@
         <hr>
         <br>
         <p style="color: black;">
-          ¡Oh, no! El indicador de gasolina indica que quedan sólo 48 litros. Prem calcula que por cada litro recorre 3 kilómetros. Entonces ¿Cuántos kilómetros alcanzará a recorrer antes de que se le acabe? (144 kilometros)
+          ¡Oh, no! El indicador de gasolina indica que quedan sólo 48 litros. Prem calcula que por cada litro recorre 3 kilómetros. Entonces ¿Cuántos kilómetros alcanzará a recorrer antes de que se le acabe? 
 
                  </p>
         <br>
@@ -378,8 +378,8 @@
   <div class="container">
     <div class="row justify-content-center">
 
-  <img src="http://www.manosya.cl/equipomagico/Lossecretosdeltiempo/img/heroe.png" alt="Mandos"  width="100%" height="auto" >
-<p>Muy Bien Haz Finalizado el Juego</p>
+ <a href="http://www.manosya.cl/equipomagico/Lossecretosdeltiempo"> <img src="http://www.manosya.cl/equipomagico/Lossecretosdeltiempo/img/heroe.png" alt="Mandos"  width="500px" height="auto" ></a>
+<p>Muy Bien Haz Finalizado el Juego, puedes entregarnos una retroalimentación para mejorar la experiencia o presionar a  Prem para volver al Inicio y ver tu lugar en el Ranking Oficial del Demo</p>
 
 
 <form  id="formFeedback"  >
@@ -391,10 +391,10 @@
 
 <br>
 <p>Email para Suscripción</p>
-<input id="txtEmail" type="email"   placeholder="¿Sugerencias para mejorar la experiencia?">
+<input id="txtEmail" type="email" required="required"  placeholder="¿Sugerencias para mejorar la experiencia?">
   
 <p>Comentario Sobre la Experiencia </p>
-   <input cols="40" rows="5" id="txtComentario" type="text"   placeholder="¿Sugerencias para mejorar la experiencia?">
+   <input cols="40" rows="5" id="txtComentario" type="text" required="required"  placeholder="¿Sugerencias para mejorar la experiencia?">
     
    <!--a id="send" class=""> Iniciar Juego </a-->
    <button  id="btnretroalimentacion" type="button">Entrar</button>
