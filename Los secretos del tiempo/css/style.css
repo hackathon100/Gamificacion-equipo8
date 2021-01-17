@@ -482,11 +482,11 @@ i {
 
 /*  mis css */
 .imgheroe {
-  width: 25%;
+  width: 15%;
 }
 
 .bg-faded {
-  background-color: transparent !important;
+  background-color:#555 !important;
 }
 
 .slider .slides li .caption {
@@ -522,6 +522,45 @@ i {
         -moz-background-size: cover;
         background-size: cover;
         height: 105vh;
+
+}
+.juego2{
+ /* background-image: url(../img/War4.png);*/
+  background-repeat: no-repeat;
+  background-position: center;
+  -moz-background-size: cover;
+  background-size: cover;
+  height: 105vh;
+
+}
+.juego3{
+   background-image: url(../img/universo.jpg);
+   background-repeat: no-repeat;
+   background-position: center;
+   -moz-background-size: cover;
+   background-size: cover;
+   height: 105vh;
+   
+ 
+ }
+ .juego4{
+  background-image: url(../img/space.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  -moz-background-size: cover;
+  background-size: cover;
+  height: 105vh;
+  
+
+}
+.juego5{
+  /*background-image: url(../img/space.png);*/
+  background-repeat: no-repeat;
+  background-position: center;
+  -moz-background-size: cover;
+  background-size: cover;
+  height: 105vh;
+  
 
 }
 .h2juego{

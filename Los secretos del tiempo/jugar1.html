@@ -39,6 +39,16 @@
     <!-- Your custom styles (optional) -->
     <link href="css/style.css" rel="stylesheet" />
     <link href="css/responsive.css" rel="stylesheet" />
+
+
+
+    <!--para el juego -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script type="text/javascript" src="http://www.manosya.cl/equipomagico/Lossecretosdeltiempo/js/magic.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://www.manosya.cl/equipomagico/Lossecretosdeltiempo/css/stylemagic.css">
+
+
   </head>
 
   <body data-spy="scroll" data-target=".navbar-desktop">
@@ -48,9 +58,8 @@
     <div class="preloader"><div class="loaded">&nbsp;</div></div>
 
     <nav class="navbar navbar-fixed-top navbar-light bg-faded">
-      <a class="navbar-brand" href="#home"
-        ><img class="imgheroe" src="img/heroe.png" alt=""
-      /></a>
+      <!--a class="navbar-brand" href="#home">
+        <img class="imgheroe" src="img/heroe.png" alt="" /></a-->
       <!--Collapse button-->
       <div class="container">
         <a href="#" data-activates="mobile-menu" class="button-collapse right"
@@ -60,21 +69,34 @@
         <!--Content for large and medium screens-->
         <div class="navbar-desktop">
           <ul class="nav navbar-nav pull-right hidden-md-down text-uppercase">
+                      
+            <!--li class="nav-item">
+              <a id="titulo" class="nav-link"></a>
+            </li-->
             <li class="nav-item">
-              <a class="nav-link" href="index.html">Inicio</a>
+              <a id="code" class="nav-link">Un nuevo Desafio para ayudar a PREM</a>
             </li>
+
             <li class="nav-item">
-              <a class="nav-link" href="historia.html">Historia</a>
+              <a id="lblalias" class="nav-link"></a>
             </li>
+            
             <li class="nav-item">
-              <a class="nav-link" href="recursos.html">Recursos</a>
+              <a id="NumerodePartidas" class="nav-link"></a>
             </li>
+
+           
+        
+           
             <li class="nav-item">
-              <a class="nav-link" href="team.html">Team</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="proyectos.html">Proyectos similares</a>
-            </li>
+              <a id="email"  class="nav-link" ></a>
+
+              <li class="nav-item">
+                <a id="score"  class="nav-link" ></a>
+         </li>
+       </li>
+          
+           
           </ul>
         </div>
 
@@ -83,8 +105,7 @@
           <ul class="side-nav" id="mobile-menu">
             <li class="nav-item">
               <a class="nav-link" href="#home"
-                >Home <span class="sr-only">(current)</span></a
-              >
+                >Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#about">About</a>
@@ -111,10 +132,10 @@
       </div>
     </nav>
 
-    <section class="juego1">
+    <section id="introBox" class="juego1">
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-md-12 text-sm-center historiabkg">
+          <div  class="col-md-12 text-sm-center historiabkg">
             <h2>“UNA NUEVA ESPERANZA”</h2>
             <p>
               El año 3000 de d.C, (nieto de Titán), un ser con un 88% del código
@@ -152,15 +173,89 @@
             <p>Para poder desbloquear el primer desafío y acceder  a la nave, por cada etapa que vayas superando conseguirás recompensas que te servirán mas adelante, como primera misión debes descubrir la clave secreta en el siguiente texto que hay en el libro: </p>
           </div>
           <div class="mision1 col-md-12">
-                <img src="img/mision1.PNG" alt="mision1">
+
+                       
+                            
+
+
+
+
+
+                <!--img src="img/mision1.PNG" alt="mision1">
                 <input type="text" placeholder="ingresa tu respuesta">
-                <input type="submit" value="Enviar">
-          </div>
+                <input type="submit" value="Enviar"-->
+        
+        
+        
+        
+        
+        
+        
+        
+              </div>
         </div>
       </div>
       <hr />
     </section>
+
+
     <!-- End of service section -->
+    <section id="section2Juego" class="juego2">
+      <div class="container">
+        <div class="row justify-content-center">
+
+          <form  id="contactForm" >
+            <div class="btn-next">
+              <div id="GrupoPreguntaInicial">
+                <img src="http://www.manosya.cl/equipomagico/Lossecretosdeltiempo/img/nombre_llama.png" alt="llama" width="auto" height="auto">
+          <br>
+                <input id="alias" type="text"   placeholder="Como te llamamos?">
+              
+              
+                <!--a id="send" class=""> Iniciar Juego </a-->
+                <button  id="send" type="button">Entrar</button>
+                </div>
+        
+        <div id="infoJugador">
+            
+      
+        
+           
+        </div>
+        
+        <hr>
+        
+        <div id="prueba1">
+            <img src="http://www.manosya.cl/equipomagico/Lossecretosdeltiempo/img/mision1.PNG" alt="llama" width="auto" height="auto">
+
+        
+        </div>
+      
+        
+              </div>
+            </form>
+        
+            <form  id="formprueba1" class="hide">
+                <div class="btn-next">
+                
+                    <!--img src="http://www.manosya.cl/equipomagico/jugar/img/nombre_llama.png" alt="llama" width="auto" height="auto"-->
+                    <h2>Ingresa el codigo secreto </h2>
+                    <p>Para lograr superar esta prueba muy observador debes ser</p>
+              <br>
+                    <input id="txtprueba1" type="number"   placeholder="Lee para la solución">
+                  
+                  
+                    <!--a id="send" class=""> Iniciar Juego </a-->
+                    <button  id="btnprueba1" type="button">Entrar</button>
+                  
+            
+            
+                </form>
+        
+       </div>
+      </div>
+      <hr />
+    </section>
 
     <section id="team" class="team">
       <div class="container">
@@ -168,6 +263,151 @@
       </div>
     </section>
     <!-- End of Team section -->
+<br>
+<br>
+<br>
+<br>
+
+<section id="section3Juego" class="juego3 hide">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div  class="col-md-12 text-sm-center historiabkg">
+        <h2>“Nave Time Traveller”</h2>
+        <p>
+          “Bienvenido al sistema de seguridad de la Nave Time Traveller. Por favor, presione el botón para encender la nave. Recuerda que tienes solo una oportunidad o la máquina se autodestruirá en 30 segundos”
+        </p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/DmdzCHBwLmA?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  
+        <p>
+          ¡Oh no! Prem no recuerda cuál de los dos botones enciende la nave, solo recuerda que el botón es una figura con más de 3 lados, pero menos de 5 lados. ¿Qué figura es esa? 
+        </p>
+
+        <img src="http://www.manosya.cl/equipomagico/Lossecretosdeltiempo/img/mandos_res2.PNG" alt="Mandos"  width="100%" height="auto" usemap="#Map">
+        
+       
+      
+        <map name="Map" id="Map">
+          <area id="AreaCuadrado" target="" alt="" title="" href="#"  coords="737,53,626,168" shape="rect" />
+          <area target="" alt="" title="" href="#" coords="29,79,34,143,166,145,168,78" shape="poly" />
+          <area target="" alt="" title="" href="#" coords="442,538,79" shape="circle" />
+          <area target="" alt="" title="" href="#" coords="684,292,740,369,791,294" shape="poly"/>
+        </map>
+        
+      </div>
+  
+      <div class="mision1 col-md-12">
+
+    
+          </div>
+    </div>
+  </div>
+  <hr />
+</section>
+
+
+<section id="section4Juego" class="juego4 hide">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div  class="col-md-12 text-sm-center historiabkg">
+        <h2>“Desafio 2”</h2>
+        <p>
+          [frase de la Nave] El nivel de combustible está bajo el óptimo. Revisar, revisar, revisar...
+            </p>
+     
+                 <hr>
+                 <br>
+                 <br>
+                 <br>
+        <!--img src="http://www.manosya.cl/equipomagico/Lossecretosdeltiempo/img/mandos_res2.PNG" alt="Mandos"  width="100%" height="auto" -->
+
+             <iframe width="560" height="315" src="https://www.youtube.com/embed/7wZ8ajVLlAA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <hr>
+        <br>
+        <br>
+        <br>
+        <hr>
+        <br>
+        <p style="color: black;">
+          ¡Oh, no! El indicador de gasolina indica que quedan sólo 48 litros. Prem calcula que por cada litro recorre 3 kilómetros. Entonces ¿Cuántos kilómetros alcanzará a recorrer antes de que se le acabe? (144 kilometros)
+
+                 </p>
+        <br>
+        <br>
+        <table style="border: rgb(14, 184, 22); color:black; width: 400px;">
+          <thead>
+      
+                  
+            <tr>
+              <th colspan="3">
+            <p id="p3_respuesta"> </p>
+              </th>
+            </tr>
+            <tr>
+              <th><button  id="btn3_7" type="button">7</button> </th>
+              <th><button  id="btn3_8" type="button">8</button></th>
+              <th><button  id="btn3_9" type="button">9</button></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><button  id="btn3_4" type="button">4</button></td>
+              <td><button  id="btn3_5" type="button">5</button></td>
+              <td><button  id="btn3_6" type="button">6</button></td>
+            </tr>
+            <tr>
+              <td><button  id="btn3_1" type="button">1</button></td>
+              <td><button  id="btn3_2" type="button">2</button></td>
+              <td><button  id="btn3_3" type="button">3</button></td>
+            </tr>
+            <tr>
+              <td><button  id="btn3_borrar" type="button">Borrar</button></td>
+              <td><button  id="btn3_0" type="button">0</button></td>
+              <td><button  id="btn3_resolver" type="button">Resolver</button></td>
+            </tr>
+          </tbody>
+          </table>
+        
+      </div>
+
+    </div>
+  </div>
+  <hr />
+</section>
+
+<section id="section5Juego" class="juego5 hide">
+  <div class="container">
+    <div class="row justify-content-center">
+
+  <img src="http://www.manosya.cl/equipomagico/Lossecretosdeltiempo/img/heroe.png" alt="Mandos"  width="100%" height="auto" >
+<p>Muy Bien Haz Finalizado el Juego</p>
+
+
+<form  id="formFeedback"  >
+<div class="btn-next">
+ 
+  
+   <h1>Suscripción y Comentarios </h1>
+   <p>Si gustas puedes suscribirte y la partida sera asociada a una cuenta tuya en el futuro</p>
+
+<br>
+<p>Email para Suscripción</p>
+<input id="txtEmail" type="email"   placeholder="¿Sugerencias para mejorar la experiencia?">
+  
+<p>Comentario Sobre la Experiencia </p>
+   <input cols="40" rows="5" id="txtComentario" type="text"   placeholder="¿Sugerencias para mejorar la experiencia?">
+    
+   <!--a id="send" class=""> Iniciar Juego </a-->
+   <button  id="btnretroalimentacion" type="button">Entrar</button>
+   
+
+
+</form>
+               
+ </div>
+      </div>
+ </section>
+
+
 
     <section id="footer" class="footer">
       <div class="main_coppyright">
@@ -177,10 +417,10 @@
               <div class="copyright_text m-t-2 text-xs-center">
                 <p class="wow zoomIn" data-wow-duration="1s">
                   Made with <i class="fa fa-heart"></i> by
-                  <a target="_black" href="http://bootstrapthemes.co">
-                    Bootstrap Themes</a
+                  <a target="_black" href="http://www.equipomagico.org">
+                   Equipo Mágico</a
                   >
-                  2016. All Rights Reserved
+                  2021. All Rights Reserved
                 </p>
               </div>
             </div>
@@ -188,6 +428,8 @@
         </div>
       </div>
     </section>
+
+   
 
     <!-- /Start your project here-->
 

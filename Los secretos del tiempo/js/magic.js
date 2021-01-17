@@ -1,41 +1,56 @@
 window.onload = function () {
     //botones
-    $("#send").click(submitform)
-    $("#btnretroalimentacion").click(enviarRetroalimentacion)
-    $("#btnprueba1").click(corroborarPrueba1)
+    $("#send").click(submitform);
+    $("#btnretroalimentacion").click(enviarRetroalimentacion);
+    $("#btnprueba1").click(corroborarPrueba1);
     
+    //area imagen cuadrado
+    $("#AreaCuadrado").click(pasarEtapa2);
+
+    //botonera mision3
+    $("#btn3_0").click(botonera_push_btn3_0);
+    $("#btn3_1").click(botonera_push_btn3_1);
+    $("#btn3_2").click(botonera_push_btn3_2);
+    $("#btn3_3").click(botonera_push_btn3_3);
+    $("#btn3_4").click(botonera_push_btn3_4);
+    $("#btn3_5").click(botonera_push_btn3_5);
+    $("#btn3_6").click(botonera_push_btn3_6);
+    $("#btn3_7").click(botonera_push_btn3_7);
+    $("#btn3_8").click(botonera_push_btn3_8);
+    $("#btn3_9").click(botonera_push_btn3_9);
+    $("#btn3_borrar").click(botonera_push_btn3_borrar);
+    $("#btn3_resolver").click(botonera_push_btn3_resolver);
     //se esconden las pruebas
     $("#prueba1").addClass('hide');
-    $("#formFeedback").addClass("hide");
-    $("#formprueba1").addClass("hide");
-
-    
-
    
+    $("#formprueba1").addClass("hide");
+    
+    
+    
+    //obtener valores
+function getInputVal(id) {
+  return document.getElementById(id).value;
+}
    // const value = $("#score").val();
 
    function corroborarPrueba1()
    {
-
     var txtprueba1 = getInputVal('txtprueba1');
     console.log('Corroborar Prueba1'  +txtprueba1);
 
- //   x.sort((a,b) => {return a.score - b.score })
+    //   x.sort((a,b) => {return a.score - b.score })
     //JSON.stringify(x)
     //Get prueba1 data
     //x.slice(0,100)
-
-
 
 return firebase.database().ref('/escenario/1/').once('value').then(function(snapshotEstaticos) {
     
     DibujarScoreBoard();
     
     //Do something with your user data located in snapshot
-    NumerodePartidas =  snapshotEstaticos.numChildren();
+   // NumerodePartidas =  snapshotEstaticos.numChildren();
     console.log(snapshotEstaticos.numChildren());
-    $("#NumerodePartidas").text("Estas jugando la partida N°"+ NumerodePartidas);
-    
+      
     var resp_prueba1 = snapshotEstaticos.child("resp_prueba1").val();
     var titulo = snapshotEstaticos.child("titulo").val();
     var url_imagen_prueba1 = snapshotEstaticos.child("url_imagen_prueba1").val();
@@ -64,6 +79,10 @@ return firebase.database().ref('/escenario/1/').once('value').then(function(snap
         var score = $("#score").text();
         score = Number.parseInt(score) + 100;
         alert("Lo lograste");
+  //esconde la sección
+  $("#section2Juego").addClass("hide");
+  $("#section3Juego").removeClass("hide");
+
 
 /*
         
@@ -112,10 +131,12 @@ updates['/secretosdeltiempo/' + code+ '/score/'] = score;
 
 updates['/secretosdeltiempo/' + code+ '/score/'] = score;
 
-    }
+}
 
     $("#score").text(score);
-    
+
+  
+
     return firebase.database().ref().update(updates);
   
   
@@ -126,15 +147,18 @@ updates['/secretosdeltiempo/' + code+ '/score/'] = score;
 
    function enviarRetroalimentacion(){
        
-   
 
     console.log('Retroalimentación');
     var code = $("#code").text();
      var comentario = getInputVal('txtComentario');
+     var email = getInputVal('txtEmail');
 
+
+     
     firebase.database().ref('feedback/' + code+ '/'+Date.now()).set({
         usercode: code,
         coment : comentario,
+        email : email,
         date : Date.now()
       }, (error) => {
         if (error) {
@@ -143,6 +167,16 @@ updates['/secretosdeltiempo/' + code+ '/score/'] = score;
         } else {
           // Data saved successfully!
           console.log('Agrego Comentario correctamente')
+
+          var updates = {};
+          updates['/secretosdeltiempo/' + code+ '/email/'] = email;
+               
+          $("#email").text(email);
+          $("#formFeedback").addClass("hide");
+alert("Felicitaciones Terminaste el Juego te invitamos a ver la tabla de puntajes");
+          return firebase.database().ref().update(updates);
+          
+
         }
       });
 
@@ -205,7 +239,6 @@ $tableScore.appendTo('#dynamicScoreTable');
 /////////////////////////////////////////////////////////////////////
     function submitform() {
 
-      $("#introBox").addClass("hide");
         var NumerodePartidas = 0 ;
         
         console.log('Apretaron el boton submit');
@@ -231,28 +264,22 @@ $tableScore.appendTo('#dynamicScoreTable');
          $("#GrupoPreguntaInicial").addClass("hide");
        
          $("#prueba1").removeClass("hide");
-      //   $("#formFeedback").removeClass("hide");
+
       $("#formprueba1").removeClass("hide");
-       
-      DibujarScoreBoard();
-    
-//Get the user data
+
+      $("#introBox").addClass("hide");
+   
+      
+
+
+        //Get the user data
 return firebase.database().ref('/secretosdeltiempo/').once('value').then(function(snapshot) {
-    //Do something with your user data located in snapshot
-    NumerodePartidas =  snapshot.numChildren();
-    console.log(snapshot.numChildren());
-    $("#NumerodePartidas").text("Estas jugando la partida N°"+ NumerodePartidas);
+  //Do something with your user data located in snapshot
+  NumerodePartidas =  snapshot.numChildren();
+  console.log(snapshot.numChildren());
+  $("#NumerodePartidas").text("Estas jugando la partida N°"+ NumerodePartidas);
 });
 }
-
-
-
-
-
-//obtener valores
-function getInputVal(id) {
-    return document.getElementById(id).value;
-  }
 
  // GET 
  //var email = getInputVal('email');
@@ -321,4 +348,251 @@ function getInputVal(id) {
   }
 
   console.log('esto esta fuera de la funcion de firebase');
+  
+
+  function pasarEtapa2()
+  {
+    
+    alert('¡Muy bien! Prem pudo encender el motor de la nave.');
+    $("#section3Juego").addClass("hide");
+    $("#section4Juego").removeClass("hide");
+
+    var code = $("#code").text();
+    var score = $("#score").text();
+    score = Number.parseInt(score) + 100;
+
+    
+    $("#score").text(score);
+    var updates = {};
+    updates['/secretosdeltiempo/' + code+ '/score/'] = score;
+
+    return firebase.database().ref().update(updates);
+
+   // return ;
+
+  }
+
+
+
+  ///Function de la botonera etapa 3
+  function botonera_push_btn3_0() 
+  {
+    var txt3_respuesta =$("#p3_respuesta").text();
+
+    if(isNaN(txt3_respuesta))
+    {
+     // txt3_respuesta = 0;
+    }else
+    {
+      txt3_respuesta = txt3_respuesta + 0;
+    }
+
+    $("#p3_respuesta").text(txt3_respuesta);
+    
+  }
+  function botonera_push_btn3_1() 
+  {
+    var txt3_respuesta =$("#p3_respuesta").text();
+
+    if(isNaN(txt3_respuesta))
+    {
+      txt3_respuesta = 1;
+    }else
+    {
+      txt3_respuesta = txt3_respuesta + 1;
+    }
+
+    $("#p3_respuesta").text(txt3_respuesta);
+    
+  }
+  function botonera_push_btn3_2() 
+  {
+    var txt3_respuesta =$("#p3_respuesta").text();
+
+    if(isNaN(txt3_respuesta))
+    {
+      txt3_respuesta = 2;
+    }else
+    {
+      txt3_respuesta = txt3_respuesta + 2;
+    }
+
+    $("#p3_respuesta").text(txt3_respuesta);
+    
+  }
+  function botonera_push_btn3_3() 
+  {
+    var txt3_respuesta =$("#p3_respuesta").text();
+
+    if(isNaN(txt3_respuesta))
+    {
+      txt3_respuesta = 3;
+    }else
+    {
+      txt3_respuesta = txt3_respuesta + 3;
+    }
+
+    $("#p3_respuesta").text(txt3_respuesta);
+    
+  }
+  function botonera_push_btn3_4() 
+  {
+    var txt3_respuesta =$("#p3_respuesta").text();
+
+    if(isNaN(txt3_respuesta))
+    {
+      txt3_respuesta = 4;
+    }else
+    {
+      txt3_respuesta = txt3_respuesta + 4;
+    }
+
+    $("#p3_respuesta").text(txt3_respuesta);
+    
+  }
+  function botonera_push_btn3_5() 
+  {
+    var txt3_respuesta =$("#p3_respuesta").text();
+
+    if(isNaN(txt3_respuesta))
+    {
+      txt3_respuesta = 5;
+    }else
+    {
+      txt3_respuesta = txt3_respuesta + 5;
+    }
+
+    $("#p3_respuesta").text(txt3_respuesta);
+    
+  }
+  function botonera_push_btn3_6() 
+  {
+    var txt3_respuesta =$("#p3_respuesta").text();
+
+    if(isNaN(txt3_respuesta))
+    {
+      txt3_respuesta = 6;
+    }else
+    {
+      txt3_respuesta = txt3_respuesta + 6;
+    }
+
+    $("#p3_respuesta").text(txt3_respuesta);
+    
+  }
+  function botonera_push_btn3_7() 
+  {
+    var txt3_respuesta =$("#p3_respuesta").text();
+
+    if(isNaN(txt3_respuesta))
+    {
+      txt3_respuesta = 7;
+    }else
+    {
+      txt3_respuesta = txt3_respuesta + 7;
+    }
+
+    $("#p3_respuesta").text(txt3_respuesta);
+    
+  }
+
+  function botonera_push_btn3_8() 
+  {
+    var txt3_respuesta =$("#p3_respuesta").text();
+
+    if(isNaN(txt3_respuesta))
+    {
+      txt3_respuesta = 8;
+    }else
+    {
+      txt3_respuesta = txt3_respuesta + 8;
+    }
+
+    $("#p3_respuesta").text(txt3_respuesta);
+    
+  }
+
+  function botonera_push_btn3_9() 
+  {
+    var txt3_respuesta =$("#p3_respuesta").text();
+
+    if(isNaN(txt3_respuesta))
+    {
+      txt3_respuesta = 9;
+    }else
+    {
+      txt3_respuesta = txt3_respuesta + 9;
+    }
+
+    $("#p3_respuesta").text(txt3_respuesta);
+    
+  }
+  function botonera_push_btn3_borrar() 
+  {
+    /*var txt3_respuesta =$("#p3_respuesta").text();
+
+    if(isNaN(txt3_respuesta))
+    {
+      txt3_respuesta = 9;
+    }else
+    {
+      txt3_respuesta = txt3_respuesta + 9;
+    }
+*/
+    $("#p3_respuesta").text("");
+    
+  }
+  function botonera_push_btn3_resolver()
+  {
+   
+  
+    var txt3_respuesta =$("#p3_respuesta").text();
+
+
+    return firebase.database().ref('/escenario/1/').once('value').then(function(snapshotEstaticos2) {
+    
+      
+      //Do something with your user data located in snapshot
+     // NumerodePartidas =  snapshotEstaticos.numChildren();
+      console.log(snapshotEstaticos2.numChildren());
+        
+      var resp_prueba3 = snapshotEstaticos2.child("resp_prueba3").val();
+
+      if(txt3_respuesta == resp_prueba3)
+      {
+
+      var code = $("#code").text();
+      var score = $("#score").text();
+      score = Number.parseInt(score) + 100;
+  
+      
+      $("#score").text(score);
+      var updates = {};
+      updates['/secretosdeltiempo/' + code+ '/score/'] = score;
+  
+      alert('¡Muy bien! Prem pudo encender el motor de la nave.');
+
+      $("#section4Juego").addClass("hide");
+      $("#section5Juego").removeClass("hide");
+
+      return firebase.database().ref().update(updates);
+   
+      }else
+      {
+        alert('¡Respuesta Equivocada! Prem necesita tu ayuda, Intentalo Denuevo.');
+
+      }
+
+    
+
+    });
+
+ 
+
+
+
+
+   
+  }
+
   
