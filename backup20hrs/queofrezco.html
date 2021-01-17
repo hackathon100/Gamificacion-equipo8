@@ -1,0 +1,232 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Amita' rel='stylesheet'>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script type="text/javascript" src="js/queofrezco.js"></script>
+    <script type="text/javascript" src="js/manager.js"></script>
+
+    <title>¿Qué ofrezco?</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="main-title">
+        <h1>¿Qué ofrezco?</h1>
+      </div>
+      <form  id="contactForm" >
+       
+        <div class="box-container" id="qo-welcome-box">
+            <p> Es el momento de indicar un servicio que tienes la confianza necesaria para ofrecerlos al resto del planeta.
+              </p>
+     <p>
+        ¿Qué servicios que están registrando te pueden dar un idea?:<br />
+        1. Gestionador de la implementación del servicio de internet en empresas o establecimientos.
+        2. Clon en Reuniones.
+        3. Gestionador del Cambio
+        4. Profesora de Talleres de Acrobacia Circense para niñ@s, jóvenes y adult@s
+        5. Profesora de Clases de Alemán
+        6. Ilustraciones a pedido
+        7. Impresión 3D para la polola, el familiar o el amigo.
+     </p> 
+     <p>
+        Como ves, no hay reglas. Puedes completar este formulario todas las veces que quieras, por cada servicio o solución que sientas que provees. :)   
+    </p>
+              
+              <div class="box-content" >
+                <div class="answers">
+                 
+                  <div class="btn-next">
+                    <a id="qo_toEmail" class=""> Comenzar </a>
+                  </div>
+                </div>
+               
+              </div>
+            </div>
+
+
+        <div class="box-container hide" id="qo-email-box">
+        
+          <div class="box-header">
+             
+            <div class="title">
+              <p>Cuentanos, ¿cual es tú dirección de correo electrónico?</p>
+            </div>
+          </div>
+          <div class="box-content" >
+            <div class="answers">
+              <input id="email" type="email" class="form-control"  aria-describedby="emailHelp" placeholder="Tu respuesta" required>
+              <div class="btn-next">
+                <a id="toNombreServicio" class=""> SIGUIENTE </a>
+              </div>
+            </div>
+            <div class="tools">
+              <p> 1 de 7</p>
+            </div>
+          </div>
+        </div>
+        <div class="box-container hide" id="qo-nombre-servicio-box">
+          <div class="box-header">
+            <div class="title">
+              <p>Nombre de mi servicio </p>
+            </div>
+            <div class="extra-header">
+                <p>Ponle el nombre que quieras a tu servicio.</p>
+              </div>
+        
+          </div>
+          <div class="box-content">
+            <div class="answers">
+              <input id="nombreServicio" type="text" class="form-control"  aria-describedby="nombreServicioHelp" placeholder="Tu respuesta" required>
+              <div class="btn-next">
+                <a id="toQueResuelve" > SIGUIENTE </a>
+              </div>
+            </div>
+            <div class="tools">
+              <a id="toOne_qo"><i class="fas fa-angle-left fa-3x"></i></a>
+              <p> 2 de 7</p>
+            </div>
+          </div>
+        </div>
+
+      <div class="box-container hide" id="qo-que-resuelve-box">
+        <div class="box-header" style="height: 100px;">
+          <div class="title">
+            <p>Es un servicio que resuelve...</p>
+          </div>
+          <div class="extra-header">
+            <p>¿Qué soluciona? ¿Qué situacion(es) se arreglan o qué problema(s) desaparece(n) cuando te dan la oportunidad de hacerte cargo de ellos? </p>
+          </div>
+        </div>
+        <div class="box-content">
+          <div class="answers">
+            <input id="resuelve" type="text" class="form-control" aria-describedby="resuelveHelp" placeholder="Tu respuesta">
+            <div class="btn-next">
+              <a id="toComoEs"> SIGUIENTE </a>
+            </div>
+          </div>
+          <div class="tools">
+            <a id="toTwo_qo"><i class="fas fa-angle-left fa-3x"></i></a>
+            <p><b>3</b> de 7</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="box-container hide" id="qo-como-es-box">
+          <div class="box-header" style="height: 100px;">
+            <div class="title">
+              <p>¿Cómo es?</p>
+            </div>
+            <div class="extra-header">
+              <p>¿Cómo describes tu servicio? (no obligatoria) </p>
+            </div>
+          </div>
+          <div class="box-content">
+            <div class="answers">
+              <input id="comoEs" type="text" class="form-control" aria-describedby="comoEsHelp" placeholder="Tu respuesta">
+              <div class="btn-next">
+                <a id="toExperiencia"> SIGUIENTE </a>
+              </div>
+            </div>
+            <div class="tools">
+              <a id="toThree_qo"><i class="fas fa-angle-left fa-3x"></i></a>
+              <p>4 de 7</p>
+            </div>
+          </div>
+        </div>
+
+      <div class="box-container hide" id="qo-Experiencia-box">
+          <div class="box-header" style="height: 100px;">
+            <div class="title">
+              <p>... y mi nivel de experiencia es: *</p>
+              <!-- TODO : se debe considerar el cambiar por radio bottom de 1 Principiante  a 5 Maestro -->
+            </div>
+            <div class="extra-header">
+              <p>En ManosYa no importa el nivel que tienes, sino que al que quieres llegar. Indícanos aquí qué tan experimentado te sientes realizando este servicio. Si eres principiante en algo y quieres llegar a ser un maestro, puedes siempre completar nuestro OTRO formulario "¿Qué me gustaría ofrecer?" ir al formulario: https://goo.gl/forms/cctCj6g2mprd0A0d2 </p>
+            </div>
+          </div>
+          <div class="box-content">
+            <div class="answers">
+              <input id="experiencia" type="text" class="form-control" id="InputExperiencia" aria-describedby="experienciaHelp" placeholder="Tu respuesta">
+              <div class="btn-next">
+                <a id="toValidacionExperiencia"> SIGUIENTE </a>
+              </div>
+            </div>
+            <div class="tools">
+              <a id="toFour_qo"><i class="fas fa-angle-left fa-3x"></i></a>
+              <p>5 de 7</p>
+            </div>
+          </div>
+        </div>
+
+
+      <div class="box-container hide" id="qo-Validacion-Experiencia-box">
+          <div class="box-header" style="height: 100px;">
+            <div class="title">
+              <p>Creo que puedo prestar este servicio, porque...</p>
+            </div>
+            <div class="extra-header">
+              <p>¿Has tenido experiencia o estudios que te han preparado para ofrecer esto? ¿Te apasiona resolver estos problemas? Menciona esto aquí. </p>
+            </div>
+          </div>
+          <div class="box-content">
+            <div class="answers">
+              <input id="validacionExperiencia" type="text" class="form-control" aria-describedby="causaHelp" placeholder="Tu respuesta">
+              <div class="btn-next">
+                <a id="toFeedback_qo"> SIGUIENTE </a>
+              </div>
+            </div>
+            <div class="tools">
+              <a id="toFive_qo"><i class="fas fa-angle-left fa-3x"></i></a>
+              <p>6 de 7</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="box-container hide" id="feedback-box">
+          <div class="box-header" style="height: 100px;">
+            <div class="title">
+              <p>¿Algo que quieras agregar?</p>
+            </div>
+            <div class="extra-header">
+              <p> Como siempre, el feedback es algo que no podemos dejar de pedirte. Siéntete realmente libre de escribir lo que
+                  quieras.</p>
+            </div>
+          </div>
+          <div class="box-content">
+            <div class="answers">
+              <input id="feedback" type="text" class="form-control" id="Inputfeedback" aria-describedby="feedbackHelp" placeholder="tu respuesta">
+            <!-- <button type="submit" class="btn-next" id="send">ENVIAR</button> -->
+              <div class="btn-next">
+                <a id="send" class=""> ENVIAR </a>
+              </div>
+            </div>
+            <div class="tools">
+              <a id="toSix_qo"><i class="fas fa-angle-left fa-3x"></i></a>
+              <p> 7 de 7</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="box-container hide" id="thanks">
+          <div class="box-header" style="height: 100px;">
+            <div class="title">
+              <p>Muchas gracias humano por tus respuestas!</p>
+            </div>
+            <div class="extra-header">
+              <p> Besitos </p>
+            </div>
+          </div>
+        </div>
+      
+      </form>
+    </div>
+  </body>
+</html>
