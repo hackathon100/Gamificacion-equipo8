@@ -228,9 +228,7 @@ textarea.md-textarea {
   display: block;
 }
 
-/*===================================================================*/
-.main_accordion {
-}
+
 .main_accordion .single_accordion {
   margin-bottom: 10px;
 }
@@ -335,8 +333,7 @@ div.panel.show {
 /*==========================================================
                 Service section style
 ============================================================*/
-.main_service_area {
-}
+
 .main_service_area .col-md-4:hover .single_service {
   background: #3f444a;
   color: #fff;
@@ -375,13 +372,11 @@ div.panel.show {
 }
 
 
-}
 
 /*==========================================================
                 Client section style
 ============================================================*/
-.main_client_area .main_client_content .single_c_text {
-}
+
 .main_client_area .main_client_content .single_c_text h3 {
   margin: 0;
   padding: 0;
@@ -421,8 +416,7 @@ div.panel.show {
   background-size: cover;
   overflow: hidden;
 }
-.main_counter_area .main_counter_content {
-}
+
 .main_counter_area .main_counter_content .single_counter {
   background: rgba(236, 72, 72, 0.5);
 }
@@ -433,11 +427,6 @@ div.panel.show {
 /*======================================================================
                 Team Section style
 ========================================================================*/
-
-.main_team_area {
-}
-.main_team_area .main_team_content {
-}
 .main_team_area .main_team_content .single_team {
   position: relative;
   width: 100%;
@@ -466,19 +455,14 @@ div.panel.show {
   padding: 0;
 }
 
+
 .main_team_area
-  .main_team_content
-  .single_team
-  .single_team_overlay
-  .team_socail {
-}
-.main_team_area
-  .main_team_content
-  .single_team
-  .single_team_overlay
-  .team_socail
-  a
-  i {
+.main_team_content
+.single_team
+.single_team_overlay
+.team_socail
+a
+i {
   color: #fff;
   padding: 0px 2px;
   transition: all 0.3s;
@@ -494,90 +478,7 @@ div.panel.show {
   border-bottom: 2px solid #000;
 }
 
-/*======================================================================
-                    Footer Section Style
-========================================================================*/
 
-.footer {
-  background: #151515;
-}
-.main_footer_area {
-  overflow: hidden;
-}
-.main_footer_area .single_f_widget {
-}
-.main_footer_area .single_f_widget img {
-  width: 60%;
-}
-.main_footer_area .single_f_widget .single_f_widget_text {
-  padding-left: 10px;
-}
-.main_footer_area .single_f_widget .single_f_widget_text p {
-  font-size: 14px;
-  margin-top: 15px;
-  color: #cccccc;
-}
-.main_footer_area .single_f_widget .single_f_widget_text .socail_f_widget a i {
-  background: #fefefe;
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-  color: #444444;
-  text-align: center;
-  transition: all 0.3s;
-}
-.main_footer_area
-  .single_f_widget
-  .single_f_widget_text
-  .socail_f_widget
-  a:hover
-  i {
-  background: #ec4848;
-  color: #fff;
-}
-.main_footer_area .single_f_widget .single_f_widget_text.f_reatures li {
-  font-size: 15px;
-  margin-bottom: 10px;
-  color: #cccccc;
-}
-.main_footer_area .single_f_widget .single_f_widget_text.f_reatures i {
-  color: #ec4848;
-  padding-right: 5px;
-}
-
-.main_footer_area .single_f_widget .single_f_widget_text.f_tags a {
-  color: #fff;
-  background: #ec4848;
-  padding: 5px 10px;
-  margin-bottom: 7px;
-  display: inline-block;
-  font-size: 14px;
-}
-.main_footer_area .single_f_widget .single_f_widget_text.f_flicker img {
-  width: 23%;
-  margin-bottom: 5px;
-}
-.main_coppyright {
-  border-top: 2px solid #534a4a;
-}
-.main_coppyright p {
-  color: #c5c5c5;
-}
-.main_coppyright p a {
-  color: #ec4848;
-  padding: 0px 5px;
-}
-.main_coppyright p i {
-  color: #ec4848;
-}
-.main_coppyright .socail_coppyright a i {
-  color: #737373;
-  padding: 0px 5px;
-  transition: all 0.3s;
-}
-.main_coppyright .socail_coppyright a:hover i {
-  color: #ec4848;
-}
 
 /*  mis css */
 .imgheroe {
@@ -625,11 +526,11 @@ div.panel.show {
 }
 .h2juego{
     color:rgb(33, 33, 194);
-    padding-top:10%;
-    font-size: 25px;
+    padding-top:30%;
+    font-size: 35px;
 }
 
 .mision1{
     width: 100%;
 
-}
+} 
