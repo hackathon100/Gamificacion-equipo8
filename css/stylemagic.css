@@ -1,0 +1,19 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+    font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
+    color: #FFFFFF;
+    /* background: linear-gradient(to bottom, #008FB4, #FFFFFF); */
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: auto;
+    background-color: #008FB4;
+    /* background-image: url("../img/banner.jpg"); */
+  }
+
+.hide {
+    display: none;
+  }

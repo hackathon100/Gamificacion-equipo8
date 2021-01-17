@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!--<meta http-equiv="x-ua-compatible" content="ie=edge">-->
+
+    <title>Los secretos del tiempo</title>
+    <link rel="icon" href="img/heroe.png" type="image/gif" sizes="16x16" />
+    <!-- Font Awesome -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,800,600,300,300italic,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css"
+    />
+
+    <!-- Material Design Bootstrap -->
+    <link href="css/materialize.css" rel="stylesheet" />
+
+    <!-- Magnific-popup css -->
+    <link href="css/magnific-popup.css" rel="stylesheet" />
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Material Design Bootstrap -->
+    <!--<link href="css/progressbar.css" rel="stylesheet">-->
+
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet" />
+
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/responsive.css" rel="stylesheet" />
+
+
+
+    <!--para el juego -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script type="text/javascript" src="http://www.manosya.cl/equipomagico/Lossecretosdeltiempo/js/magic.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://www.manosya.cl/equipomagico/Lossecretosdeltiempo/css/stylemagic.css">
+
+
+  </head>
+
+  <body data-spy="scroll" data-target=".navbar-desktop">
+    <!-- Start your project here-->
+    <!--Navbar-->
+
+    <div class="preloader"><div class="loaded">&nbsp;</div></div>
+
+    <nav class="navbar navbar-fixed-top navbar-light bg-faded">
+      <!--a class="navbar-brand" href="#home">
+        <img class="imgheroe" src="img/heroe.png" alt="" /></a-->
+      <!--Collapse button-->
+      <div class="container">
+        <a href="#" data-activates="mobile-menu" class="button-collapse right"
+          ><i class="fa fa-bars black-text"></i
+        ></a>
+
+        <!--Content for large and medium screens-->
+        <div class="navbar-desktop">
+          <ul class="nav navbar-nav pull-right hidden-md-down text-uppercase">
+                      
+            <!--li class="nav-item">
+              <a id="titulo" class="nav-link"></a>
+            </li-->
+            <li class="nav-item">
+              <a id="code" class="nav-link">Un nuevo Desafio para ayudar a PREM</a>
+            </li>
+
+            <li class="nav-item">
+              <a id="lblalias" class="nav-link"></a>
+            </li>
+            
+            <li class="nav-item">
+              <a id="NumerodePartidas" class="nav-link"></a>
+            </li>
+
+           
+        
+           
+            <li class="nav-item">
+              <a id="email"  class="nav-link" ></a>
+
+              <li class="nav-item">
+                <a id="score"  class="nav-link" ></a>
+         </li>
+       </li>
+          
+           
+          </ul>
+        </div>
+
+        <!-- Content for mobile devices-->
+        <div class="navbar-mobile">
+          <ul class="side-nav" id="mobile-menu">
+            <li class="nav-item">
+              <a class="nav-link" href="#home"
+                >Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#service">Service</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#portfolio">portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#newsletter">Support</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!">Faq</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!"
+                ><i class="fa fa-search fa-lg"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section id="introBox" class="juego1">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div  class="col-md-12 text-sm-center historiabkg">
+            <h2 id="introboxh">¡Hay una grabación muy antigua con un extraño ser enviandonos un mensaje!</h2>
+            
+             
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/7wZ8ajVLlAA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h2 class="h2juego pl-5">Ayuda a Prem a solucionar los desafíos matemáticos, para que pueda viajar al planeta tierra en el año 2021.
+            </h2>
+            <p class="h2juegop">Para poder desbloquear el primer desafío y acceder  a la nave, por cada etapa que vayas superando conseguirás recompensas que te servirán mas adelante, como primera misión debes descubrir la clave secreta en el siguiente texto que hay en el libro: </p>
+           
+          </div>
+          <div class="col-md-4 text-sm-center">
+            <img src="http://www.manosya.cl/equipomagico/Lossecretosdeltiempo/img/heroe.png" alt="Mandos"  width="400px" height="auto" >
+              
+          </div>
+          <div class="mision1 col-md-8">
+
+         
+            <h2 >“UNA NUEVA ESPERANZA”</h2>
+            
+            <p>
+             El año 3000 de d.C, (nieto de Titán), un ser con un 88% del código
+             genético de un homo sapiens sapien, logró escapar finalmente de la
+             prisión y recuperar su Nave del Tiempo. Fueron muchos años de
+             espera en aquel lugar, solo... y al salir, miró hacia la Tierra y
+             dedujo que ya no había vida. Era tal vez la última persona del
+             Universo. Se dio cuenta que el linaje humano había terminado de
+             fracasar y no pudo aceptar haber fallado.
+           </p>
+           <p>
+             Consiguió, con dificultades activar su nave. No recordaba muy bien
+             las contraseñas que en alguna oportunidad le hicieron ser conocido
+             como un gran y peligroso viajero del tiempo. Sin saber qué hacer,
+             de pronto recordó que en la guantera de la nave había escondido un
+             cuaderno con toda la información que necesitaba… aunque… primero,
+             debería decodificarla. Este cuaderno parecía una reliquia, sin
+             embargo, cada combinación llevaba a un espacio y tiempo
+             determinado del Universo. Cualquier error podría dejar a nuestro
+             protagonista en un agujero negro, en medio de una montaña o en el
+             más extenso y perdido vacío cósmico.
+           </p>
+           <p>
+             Viendo que cada una de las 20 páginas son una posibilidad de las
+             infinitas que existen, encontró una que le llevaba al planeta
+             Tierra en el año 2021. Decía algo con color rojo que ya no se
+             lograba distinguir. Cerró los ojos y dejó que su intuición lo
+             guiara y se decidió por esa página a fin de cambiar el mundo.
+             Empezó a ver los números y signos. ¡Eran ejercicios matemáticos!
+           </p>
+                <!--img src="img/mision1.PNG" alt="mision1">
+                <input type="text" placeholder="ingresa tu respuesta">
+                <input type="submit" value="Enviar"-->
+        
+              </div>
+        </div>
+      </div>
+      <hr />
+    </section>
+
+
+    <!-- End of service section -->
+    <section id="section2Juego" class="juego2">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-12"><h2 class="h2juego2">¡Comencemos!</h2></div>
+          
+          <form  id="contactForm" >
+            <div class="btn-next">
+              <div id="GrupoPreguntaInicial">
+                
+                <img src="http://www.manosya.cl/equipomagico/Lossecretosdeltiempo/img/nombre_llama.png" alt="llama" width="auto" height="auto">
+          <br>
+                <input id="alias" type="text"   placeholder="¿Como te llamamos?">
+              
+              
+                <!--a id="send" class=""> Iniciar Juego </a-->
+                <button  id="send" type="button">Entrar</button>
+                </div>
+        
+        <div id="infoJugador">
+      
+           
+        </div>
+        
+       
+        
+        <div id="prueba1">
+            
+          <img id="img_mision1" src="http://www.manosya.cl/equipomagico/jugar/img/mision1.PNG" alt="llama" width="auto" height="auto">
+
+        
+        </div>
+      
+        
+              </div>
+            </form>
+        
+            <form  id="formprueba1" class="hide">
+                <div class="btn-next">
+                
+                    <!--img src="http://www.manosya.cl/equipomagico/jugar/img/nombre_llama.png" alt="llama" width="auto" height="auto"-->
+                    <h2>Ingresa el codigo secreto </h2>
+                    <p>Para lograr superar esta prueba muy observador debes ser</p>
+                    <p>Pista: debes leer detenidamente el texto  y descubrir la clave númerica oculta</p>
+              <br>
+                    <input id="txtprueba1" type="number"   placeholder="Lee para la solución">
+                  
+                  
+                    <!--a id="send" class=""> Iniciar Juego </a-->
+                    <button  id="btnprueba1" type="button">Entrar</button>
+                  
+            
+            
+                </form>
+        
+       </div>
+      </div>
+      
+    
+    </section>
+
+   
+    <section id="team" class="team">
+      <div class="container">
+        <div class="row">
+         
+        </div>
+      </div>
+    </section>
+    <!-- End of Team section -->
+
+
+<section id="section3Juego" class="juego3 hide">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div  class="col-md-12 text-sm-center historiabkg">
+        <h2>“Nave Time Traveller”</h2>
+        <p>
+          “Bienvenido al sistema de seguridad de la Nave Time Traveller. Por favor, presione el botón para encender la nave. Recuerda que tienes solo una oportunidad o la máquina se autodestruirá en 30 segundos”
+        </p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/DmdzCHBwLmA?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  
+        <p>
+          ¡Oh no! Prem no recuerda cuál de los dos botones enciende la nave, solo recuerda que el botón es una figura con más de 3 lados, pero menos de 5 lados. ¿Qué figura es esa? 
+        </p>
+        <p>Presiona el botón con la figura geométrica que debe activar Prem</p>
+
+        <img src="http://www.manosya.cl/equipomagico/Lossecretosdeltiempo/img/mandos_res2.PNG" alt="Mandos"  width="100%" height="auto" usemap="#Map">
+        
+       
+      
+        <map name="Map" id="Map">
+          <area id="AreaCuadrado" target="" alt="" title="" href="#"  coords="737,53,626,168" shape="rect" />
+          <area id="AreaRectangulo" target="" alt="" title="" href="#" coords="29,79,34,143,166,145,168,78" shape="poly" />
+          <area id="AreaCirculo" target="" alt="" title="" href="#" coords="442,538,79" shape="circle" />
+          <area id="AreaTriangulo" target="" alt="" title="" href="#" coords="684,292,740,369,791,294" shape="poly"/>
+        </map>
+        
+      </div>
+  
+      <div class="mision1 col-md-12">
+
+    
+          </div>
+    </div>
+  </div>
+  <hr />
+</section>
+
+
+<section id="section4Juego" class="juego4 hide">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div  class="col-md-12 text-sm-center historiabkg">
+        <h2>“Desafio 3”</h2>
+        <p>
+          [frase de la Nave] El nivel de combustible está bajo el óptimo. Revisar, revisar, revisar...
+            </p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/GWuwMl89P7o?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                 <hr>
+                 <br>
+                 <br>
+                 <br>
+        <!--img src="http://www.manosya.cl/equipomagico/Lossecretosdeltiempo/img/mandos_res2.PNG" alt="Mandos"  width="100%" height="auto" -->
+
+          <hr>
+        <br>
+        <br>
+        <br>
+        <hr>
+        <br>
+        <p style="color: black;">
+          ¡Oh, no! El indicador de gasolina indica que quedan sólo 48 litros. Prem calcula que por cada litro recorre 3 kilómetros. Entonces ¿Cuántos kilómetros alcanzará a recorrer antes de que se le acabe? 
+
+                 </p>
+        <br>
+        <p>Escribe la respuesta del problema presionando los números que correspondan</p>
+        <br>
+        <table style="border: rgb(14, 184, 22); color:black; width: 400px;">
+          <thead>
+      
+                  
+            <tr>
+              <th colspan="3">
+            <p id="p3_respuesta"> </p>
+              </th>
+            </tr>
+            <tr>
+              <th><button  id="btn3_7" type="button">7</button> </th>
+              <th><button  id="btn3_8" type="button">8</button></th>
+              <th><button  id="btn3_9" type="button">9</button></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><button  id="btn3_4" type="button">4</button></td>
+              <td><button  id="btn3_5" type="button">5</button></td>
+              <td><button  id="btn3_6" type="button">6</button></td>
+            </tr>
+            <tr>
+              <td><button  id="btn3_1" type="button">1</button></td>
+              <td><button  id="btn3_2" type="button">2</button></td>
+              <td><button  id="btn3_3" type="button">3</button></td>
+            </tr>
+            <tr>
+              <td><button  id="btn3_borrar" type="button">Borrar</button></td>
+              <td><button  id="btn3_0" type="button">0</button></td>
+              <td><button  id="btn3_resolver" type="button">Resolver</button></td>
+            </tr>
+          </tbody>
+          </table>
+        
+      </div>
+
+    </div>
+  </div>
+  <hr />
+</section>
+
+<section id="section5Juego" class="juego5 hide">
+  <div class="container">
+    <div class="row justify-content-center">
+
+ <a href="http://www.manosya.cl/equipomagico/Lossecretosdeltiempo"> <img src="http://www.manosya.cl/equipomagico/Lossecretosdeltiempo/img/heroe.png" alt="Mandos"  width="500px" height="auto" ></a>
+<p>La cantidad de combustible solo será suficiente para llegar a la tierra. Prem logra realizar una maniobra que le demostrará que el talento para conducir naves jamás se olvida. Es como andar en bicicleta... ¿O no? 
+
+  ¿Lo logrará?
+  Esta aventura continuará.
+  </p>
+
+ <hr>
+  <p>¡Muy bien! has Finalizado el Juego de Prueba, puedes entregarnos una retroalimentación para mejorar la experiencia o presionar a  Prem para volver al Inicio y ver tu lugar en el Ranking Oficial del Demo</p>
+
+
+<form  id="formFeedback"  >
+<div class="btn-next">
+ 
+  
+   <h1>Suscripción y Comentarios </h1>
+   <p>Si gustas puedes suscribirte y la partida sera asociada a una cuenta tuya en el futuro</p>
+
+<br>
+<p>Email para Suscripción</p>
+<input id="txtEmail" type="email" required="required"  placeholder="¿Sugerencias para mejorar la experiencia?">
+  
+<p>Comentario Sobre la Experiencia </p>
+   <input cols="40" rows="5" id="txtComentario" type="text" required="required"  placeholder="¿Sugerencias para mejorar la experiencia?">
+    
+   <!--a id="send" class=""> Iniciar Juego </a-->
+   <button  id="btnretroalimentacion" type="button">Entrar</button>
+   
+
+
+</form>
+               
+ </div>
+      </div>
+ </section>
+
+
+ <br>
+         
+    <section id="footer" class="footer">
+      <div class="main_coppyright">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 col-xs-12">
+              <div class="copyright_text m-t-2 text-xs-center">
+                <p class="wow zoomIn" data-wow-duration="1s">
+                  Made with <i class="fa fa-heart"></i> by
+                  <a target="_black" href="http://www.equipomagico.org">
+                   Equipo Mágico</a
+                  >
+                  2021. All Rights Reserved
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   
+
+    <!-- /Start your project here-->
+
+    <!-- SCRIPTS -->
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/tether.min.js"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+
+    <!-- Wow js -->
+    <script type="text/javascript" src="js/wow.min.js"></script>
+
+    <!-- Mixitup js -->
+    <script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
+
+    <!-- Magnific-popup js -->
+    <script type="text/javascript" src="js/jquery.magnific-popup.js"></script>
+
+    <!-- accordion js -->
+    <script type="text/javascript" src="js/accordion.js"></script>
+
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/materialize.js"></script>
+
+    <script>
+      $(".button-collapse").sideNav();
+    </script>
+
+    <!-- wow js active -->
+    <script type="text/javascript">
+      new WOW().init();
+    </script>
+
+    <script type="text/javascript" src="js/plugins.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>

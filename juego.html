@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+     <!-- Required meta tags -->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    
+
+
+    <title>La respuesta esta donde menos lo imaginas</title>
+
+
+  </head>
+  <body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script type="text/javascript" src="http://www.manosya.cl/equipomagico/jugar/js/magic.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://www.manosya.cl/equipomagico/jugar/css/stylemagic.css">
+    <form  id="contactForm" >
+    <div class="btn-next">
+       <div id="GrupoPreguntaInicial">
+        <img src="http://www.manosya.cl/equipomagico/jugar/img/nombre_llama.png" alt="llama" width="auto" height="auto">
+   <br>
+        <input id="alias" type="text"  aria-describedby="feedbackHelp" placeholder="Como te llamamos?">
+       
+       
+        <!--a id="send" class=""> Iniciar Juego </a-->
+        <button  id="send" type="button">Entrar</button>
+        </div>
+
+ <div id="infoJugador">
+    
+ <h1 id="titulo"> </h1>
+
+    <p id="lblalias"> </p>
+ <!--p id="email"> </p-->
+    <p id="code"> </p>
+    <p id="NumerodePartidas"> </p>
+
+     <p id="score"> </p>
+ </div>
+ 
+ <hr>
+
+ <div id="prueba1">
+    <img src="http://www.manosya.cl/equipomagico/jugar/img/mision1.PNG" alt="llama" width="auto" height="auto">
+
+
+
+ </div>
+
+
+
+
+
+
+      </div>
+    </form>
+
+    <form  id="formprueba1" class="hide">
+        <div class="btn-next">
+        
+            <!--img src="http://www.manosya.cl/equipomagico/jugar/img/nombre_llama.png" alt="llama" width="auto" height="auto"-->
+            <h1>Ingresa el codigo secreto </h1>
+            <p>Para lograr superar esta prueba muy observador debes ser</p>
+       <br>
+            <input id="txtprueba1" type="number"  aria-describedby="feedbackHelp" placeholder="Lee para la solución">
+           
+           
+            <!--a id="send" class=""> Iniciar Juego </a-->
+            <button  id="btnprueba1" type="button">Entrar</button>
+          
+    
+     
+        </form>
+
+        <div id="dynamicScoreTable">
+
+
+        </div>
+
+    <form  id="formFeedback" class="hide" >
+        <div class="btn-next">
+           <div id="footer">
+            <!--img src="http://www.manosya.cl/equipomagico/jugar/img/nombre_llama.png" alt="llama" width="auto" height="auto"-->
+            <h1>Comentarios </h1>
+       <br>
+            <input id="txtComentario" type="text"  aria-describedby="feedbackHelp" placeholder="Como te llamamos?">
+           
+           
+            <!--a id="send" class=""> Iniciar Juego </a-->
+            <button  id="btnretroalimentacion" type="button">Entrar</button>
+            </div>
+    
+     
+        </form>
+  
+</body>
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!--<meta http-equiv="x-ua-compatible" content="ie=edge">-->
+
+        <title>Los secretos del tiempo</title>
+        <link rel="icon" href="img/heroe.png" type="image/gif" sizes="16x16"> 
+        <!-- Font Awesome -->
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,800,600,300,300italic,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+
+        <!-- Material Design Bootstrap -->
+        <link href="css/materialize.css" rel="stylesheet">
+
+
+        <!-- Magnific-popup css -->
+        <link href="css/magnific-popup.css" rel="stylesheet">
+
+        <!-- Bootstrap core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Material Design Bootstrap -->
+        <!--<link href="css/progressbar.css" rel="stylesheet">-->
+
+        <!-- Material Design Bootstrap -->
+        <link href="css/mdb.min.css" rel="stylesheet">
+
+        <!-- Your custom styles (optional) -->
+        <link href="css/style.css" rel="stylesheet">
+        <link href="css/responsive.css" rel="stylesheet">
+
+
+          <!--para el juego -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script type="text/javascript" src="http://www.manosya.cl/equipomagico/Lossecretosdeltiempo/js/magic.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://www.manosya.cl/equipomagico/Lossecretosdeltiempo/css/stylemagic.css">
+
+
+    </head>
+
+    <body data-spy="scroll" data-target=".navbar-desktop">
+        <!-- Start your project here-->
+        <!--Navbar-->
+
+        <div class='preloader'><div class='loaded'>&nbsp;</div></div>
+        
+        <nav class="navbar navbar-fixed-top navbar-light bg-faded">
+            <a class="navbar-brand" href="#home"><img class="imgheroe" src="img/heroe.png" alt="" /></a> 
+            <!--Collapse button-->
+            <div class="container">
+                <a href="#" data-activates="mobile-menu" class="button-collapse right"><i class="fa fa-bars black-text"></i></a>
+
+                <!--Content for large and medium screens-->
+                <div class="navbar-desktop">
+                    <ul class="nav navbar-nav pull-right hidden-md-down text-uppercase">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="historia.html">Historia</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="recursos.html">Recursos</a>
+                        </li>
+                    </ul>
+                <div>
+
+                <!-- Content for mobile devices-->
+                <div class="navbar-mobile">
+
+                    <ul class="side-nav" id="mobile-menu">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#service">Service</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#portfolio">portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#newsletter">Support</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#!">Faq</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#!"><i class="fa fa-search fa-lg"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>       
+        <div id="home" class="slider">
+            <ul class="slides">
+                <li>
+                    <img src="img/imagentiempo.jpg"> <!-- random image -->
+                    <div class="caption center-align">
+                        <div class="single_home">
+                            <h1>Los secretos del tiempo</h1>
+                            <h3>una aventura matemática!!!</h3>
+                            <h5>Beta - Adaptado para Computador, proximamente versión móvil</h5>
+                            <button type="button" class="btn btn-info m-t-2 white-text"><a href="jugar1.html">Comenzar a jugar</a></button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <hr>
+        <div class="col-md-12 center h2puntaje">
+            <h2>Tabla de Posiciones</h2>
+            <hr>
+        </div>
+        <br>
+        <br>
+        <section id="scoreboard" class="">
+            <div class="main_counter_area m-y-3">
+                <div class="overlay p-y-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class=" col-md-12 main_counter_content center white-text wow fadeInUp">            
+                                
+                                <div id="dynamicScoreTable">
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- End of counter Section -->
+        <section id="service" class="service">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="main_service_area">
+                            <div class="head_title center m-y-3 wow fadeInUp">
+                                <hr />
+                                <h2>Quienes somos</h2>
+                                <hr />
+                                <p>Somos un grupo de profesionales animados a cambiar la forma de aprendizaje de nuestra educación chilena, a través de la Hackaton Gamificando la educación Chilena.
+                                </p>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="jumbotron single_service  wow fadeInLeft">
+                                        <div class="service_icon center">
+                                            <i class="fa fa-lightbulb-o  m-b-3"></i>
+                                        </div>
+                                        <div class="s_service_text text-sm-center text-xs-center">
+                                            <h4>Demo Experiencia Online</h4>
+                                            <p>Prueba este concepto de Scape Room Online y entreganos tu retroalimentación para mejorar la experiencia</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="jumbotron single_service wow fadeInUp">
+                                        <div class="service_icon center">
+                                            <i class="fa fa-cog m-b-3"></i>
+                                        </div>
+                                        <div class="s_service_text text-sm-center text-xs-center">
+                                            <h4>Customizable</h4>
+                                            <p>las Experiencias estan pensadas para ser modificadas en tiempo real mientras ocurren las experiencias.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="jumbotron single_service wow fadeInRight">
+                                        <div class="service_icon center">
+                                            <i class="fa fa-plug m-b-3"></i>
+                                        </div>
+                                        <div class="s_service_text text-sm-center  text-xs-center">
+                                            <h4>Conectados en Comunidad</h4>
+                                            <p>Consideramos escencial la participación de la comunidad en la creación de proyectos</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+        </section> <!-- End of service section -->
+
+        <section id="counter" class="counter">
+
+            <div class="main_counter_area m-y-3">
+                <div class="overlay p-y-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="main_counter_content center white-text wow fadeInUp">
+                                <div class="col-md-3">
+                                    <div class="single_counter p-y-2 m-t-1">
+                                        <i class="fa fa-heart m-b-1"></i>
+                                        <h2 class="statistic-counter">2</h2>
+                                        <p>Colegios a participar</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="single_counter p-y-2 m-t-1">
+                                        <i class="fa fa-check m-b-1"></i>
+                                        <h2 class="statistic-counter">+700</h2>
+                                        <p>Alumnos</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="single_counter p-y-2 m-t-1">
+                                        <i class="fa fa-plus  m-b-1"></i>
+                                        <h2 class="statistic-counter">3</h2>
+                                        <p>Desafios Mátematicos</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="single_counter p-y-2 m-t-1">
+                                        <i class="fa fa-beer m-b-1"></i>
+                                        <h2 class="statistic-counter">1</h2>
+                                        <p>Talleres de Co-creación</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+        </section><!-- End of counter Section -->
+
+
+
+        <section id="team" class="team">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-sm-12">
+                        <div class="main_team_area m-y-3">
+                            <div class="head_title center  wow fadeInUp">
+                                <h2>Nuestro equipo</h2>
+                                <p>Profesionales del área de tecnología, diseño , desarrollo y educación.</p>
+                            </div>
+                            <div class="main_team_content center">
+                                <div class="row justify-content-around">
+                                    <div class="col-md-4">
+                                        <div class="single_team white-text m-t-2 wow zoomIn">
+                                            <img src="img/team1.jpg" alt="team" />
+                                            <div class="single_team_overlay">
+                                                <h4>Patricio</h4>
+                                                <p>Diseño y Comunicaciones</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="single_team white-text m-t-2 wow zoomIn">
+                                            <img src="img/team2.jpg" alt="team" />
+                                            <div class="single_team_overlay">
+                                                <h4>Claudia</h4>
+                                                <p>Diseñadora e imagen</p>
+                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="single_team white-text m-t-2 wow zoomIn">
+                                            <img src="img/team3.jpg" alt="team" />
+                                            <div class="single_team_overlay">
+                                                <h4>Mauro</h4>
+                                                <p>Lenguajes Digitales</p>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row justify-content-around pteam">
+                                        <div class="col-md-4 ml-5">
+                                            <div class="single_team white-text m-t-2 wow zoomIn">
+                                                <img src="img/team4.jpg" alt="team" />
+                                                <div class="single_team_overlay">
+                                                    <h4>Camila</h4>
+                                                    <p>Profesora Ed. Diferencial</p>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="single_team white-text m-t-2 wow zoomIn">
+                                                <img src="img/team4.jpg" alt="team" />
+                                                <div class="single_team_overlay">
+                                                    <h4>Isabel</h4>
+                                                    <p>Desarrolladora Front End</p>
+                    
+                                                </div>
+                                            </div>
+                                        </div><!--<!-- End of col-sm-3 -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+        </section><!-- End of Team section -->
+
+        <section id="footer" class="footer">
+            <div class="main_coppyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 col-xs-12">
+                            <div class="copyright_text m-t-2 text-xs-center">
+                                <p class="wow zoomIn" data-wow-duration="1s">
+                                    Made with <i class="fa fa-heart"></i> by
+                                    <a target="_black" href="http://www.equipomagico.org">
+                                     Equipo Mágico</a
+                                    >
+                                    2021. All Rights Reserved
+                                  </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+        <!-- /Start your project here-->
+
+
+        <!-- SCRIPTS -->
+
+        <!-- JQuery -->
+        <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+        <!-- Bootstrap tooltips -->
+        <script type="text/javascript" src="js/tether.min.js"></script>
+
+
+        <!-- Bootstrap core JavaScript -->
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+        <!-- MDB core JavaScript -->
+        <script type="text/javascript" src="js/mdb.min.js"></script>
+
+        <!-- Wow js -->
+        <script type="text/javascript" src="js/wow.min.js"></script>
+
+        <!-- Mixitup js -->
+        <script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
+
+        <!-- Magnific-popup js -->
+        <script type="text/javascript" src="js/jquery.magnific-popup.js"></script>
+
+        <!-- accordion js -->
+        <script type="text/javascript" src="js/accordion.js"></script>
+
+        <!-- MDB core JavaScript -->
+        <script type="text/javascript" src="js/materialize.js"></script>
+
+        <script>
+            $(".button-collapse").sideNav();
+        </script>
+
+        <!-- wow js active -->
+        <script type="text/javascript">
+            new WOW().init();
+        </script>
+
+        <script type="text/javascript" src="js/plugins.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+
+
+    </body>
+
+</html>
